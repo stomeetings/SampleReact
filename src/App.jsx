@@ -5,11 +5,13 @@ import './App.css'
 import { CompFun, CompFun2, flower } from './CompFun'
 import NeCompo  from './NeCompo'
 import CounterCheck from './CounterCheck'
+import ThemeToggle from './ThemeToggle'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <ThemeToggle />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
