@@ -1,0 +1,9 @@
+{
+  "theme": "dark",
+  "permissions": {
+    "defaultMode": "plan",
+    "deny": [
+      "Bash(*)"
+    ]
+  }
+}
