@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Spendly{% endblock %}
+
+{% block content %}
+<h1>Create your account</h1>
+<form method="POST" action="{{ url_for('register') }}">
+  <label>
+    Name
+    <input type="text" name="name" value="{{ form.name if form else '' }}">
+    {% if errors and errors.name %}<span class="error">{{ errors.name }}</span>{% endif %}
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email" value="{{ form.email if form else '' }}">
+    {% if errors and errors.email %}<span class="error">{{ errors.email }}</span>{% endif %}
+  </label>
+
+  <label>
+    Password
+    <input type="password" name="password">
+    {% if errors and errors.password %}<span class="error">{{ errors.password }}</span>{% endif %}
+  </label>
+
+  <button type="submit">Register</button>
+</form>
+{% endblock %}
