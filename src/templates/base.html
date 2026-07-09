@@ -8,6 +8,15 @@
 </head>
 <body>
   <div class="page">
+    <nav class="nav">
+      {% if session.user_id %}
+        <span class="nav-user">{{ session.user_name }}</span>
+        <a class="link" href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a class="link" href="{{ url_for('login') }}">Login</a>
+        <a class="link" href="{{ url_for('register') }}">Register</a>
+      {% endif %}
+    </nav>
     {% block content %}{% endblock %}
   </div>
 </body>

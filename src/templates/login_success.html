@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Spendly{% endblock %}
+
+{% block content %}
+<h1>Welcome back, {{ name }}</h1>
+<p>You're logged in.</p>
+<a class="link" href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
