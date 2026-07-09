@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Log in - Spendly{% endblock %}
+
+{% block content %}
+<h1>Log in</h1>
+<form method="POST" action="{{ url_for('login') }}">
+  {% if errors and errors.form %}<span class="error">{{ errors.form }}</span>{% endif %}
+
+  <label>
+    Email
+    <input type="email" name="email" value="{{ form.email if form else '' }}">
+    {% if errors and errors.email %}<span class="error">{{ errors.email }}</span>{% endif %}
+  </label>
+
+  <label>
+    Password
+    <input type="password" name="password">
+    {% if errors and errors.password %}<span class="error">{{ errors.password }}</span>{% endif %}
+  </label>
+
+  <button type="submit">Log in</button>
+</form>
+<a class="link" href="{{ url_for('register') }}">Need an account? Register</a>
+{% endblock %}

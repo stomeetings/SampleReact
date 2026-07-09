@@ -13,10 +13,14 @@ that will gate expense-tracking pages behind a logged-in check.
   log in; reuses the same `users` table and no new columns.
 
 ## Routes
-- `GET /login` — render the login form — public
+- `GET /login` — render the login form — public (already-logged-in users are
+  redirected to `/login/success`)
 - `POST /login` — validate credentials, create session on success — public
 - `GET /login/success` — confirmation page shown after a successful login — logged-in
 - `GET /logout` — clear the session, redirect to `/login` — logged-in
+
+Already-logged-in users are also redirected away from `/register` (to
+`/login/success`), since there's nothing for a logged-in user to do there.
 
 ## Database changes
 No new tables or columns. Adds one new read function to
@@ -83,3 +87,5 @@ the existing `Flask` dependency.
 - [ ] `register_success.html`'s login link points to `/login` and works.
 - [ ] `get_user_by_email` uses a parameterized query (no string
       interpolation into SQL).
+- [ ] While logged in, visiting `/login` or `/register` redirects to
+      `/login/success` instead of showing the form.

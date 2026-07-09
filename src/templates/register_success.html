@@ -4,6 +4,6 @@
 
 {% block content %}
 <h1>Registration successful</h1>
-<p>Your account has been created. You can log in once the login feature is available.</p>
+<p>Your account has been created. <a class="link" href="{{ url_for('login') }}">Log in</a> to get started.</p>
 <a class="link" href="{{ url_for('register') }}">Register another account</a>
 {% endblock %}
